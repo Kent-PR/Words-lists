@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE recipe>
+<recipe name="bread" preptime="5min" cooktime="180min">
+   <title>
+      Plain bread
+   </title>
+   <composition>
+      <ingredient amount="3" unit="glass">Flour</ingredient>
+      <ingredient amount="0.25" unit="gram">Yeast</ingredient>
+      <ingredient amount="1.5" unit="glass">Warm water</ingredient>
+   </composition>
+   <instructions>
+     <step>
+        Mix all ingredients and knead thoroughly. 
+     </step>
+     <step>
+        Cover with a cloth and leave for one hour in a warm room. 
+     </step>
+     <!-- 
+        <step>
+           Read yesterday’s newspaper. 
+        </step>
+         - this is a dubious step...
+      -->
+     <step>
+        Knead again, put on a baking sheet and place in the oven.
+     </step>
+   </instructions>
+</recipe>
