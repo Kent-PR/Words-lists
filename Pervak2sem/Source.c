@@ -56,14 +56,12 @@ struct list* addelem_finite(char* word2, int sym_cnt2)
 	lst = (struct finite*)malloc(sizeof(struct finite));
 	lst->N_to = sym_cnt2;
 	//
-	int* word = lst->inscription_to;
-	word = (int*)malloc(sym_cnt2 * sizeof(int));
+	lst->inscription_to = (int*)malloc(sym_cnt2 * sizeof(int));
 	//memcpy(word, word2, sym_cnt2); // копирует (sym_cnt2) символов из word2 в поле данных "inscription_to"
 	for (int i = 0; i < sym_cnt2; i++)
 	{
-		word[i] = (int)word2[i];
+		*((lst->inscription_to) + i) = (int)word2[i];
 	}
-	free(word);
 	//
 	return(lst);
 }
@@ -91,14 +89,12 @@ void addelem_initial(int number, char* word1, int sym_cnt1, char* word2, int sym
 	lst->num = number;
 	lst->N_from = sym_cnt1;
 	//
-	int* word = lst->inscription_from;
-	word = (int*)malloc(sym_cnt1 * sizeof(int));
+	lst->inscription_from = (int*)malloc(sym_cnt1 * sizeof(int));
 	for (int i = 0; i < sym_cnt1; i++)
 	{
-		word[i] = (int)word1[i];
+		*((lst->inscription_from)+i) = (int)word1[i];
 	}
-	//memcpy(word, word1, sym_cnt1); // копирует (sym_cnt1) символов из word1 в поле данных "inscription_from"
-	free(word);
+	
 	//
 	lst->replacement = addelem_finite(word2, sym_cnt2);
 
@@ -113,7 +109,7 @@ void key_words_reading(FILE* FROM, FILE* TO)
 	while (1)
 	{
 		if (feof(FROM)) return;
-		char tmp1[100], tmp2[100];
+		char tmp1[20], tmp2[20];
 		/*int* word1;
 		int* word2;*/
 		
